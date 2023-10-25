@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POLYMER MIXING TANK FREETA-α - 3D View</title>
+    <style>
+        .header {
+            position: fixed;
+            top: 30px;
+            left: 34px;
+            display:none;
+        }
+        .center{text-align:center}
+        body {
+            margin: 0;
+        }
+        .header img {
+            width: 120px;
+        }
+        .ar-section {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+        .ar-wrapper {
+            max-width: 890px;
+            width: 100%;
+            margin-bottom:200px;
+        }
+        .bp_model_parent {
+            height: 500px;
+        }
+        .bp_model_parent, .bp_model_gallery {
+            display: flex;
+            flex-direction: row wrap;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        model-viewer {
+            width: 100%;
+            height: 100%
+        }
+        #lazy-load-poster {
+            background-size: 100% auto!important
+        }
+        .bp_grand,.bp3dmodel-carousel {
+            position: relative;
+            margin-bottom: 25px
+        }
+        .bp_model_parent,.bp_model_gallery {
+            display: flex;
+            flex-direction: row wrap;
+            justify-content: center;
+            align-items: center;
+            position: relative
+        }
+        .fullscreen.bp_model_parent,.fullscreen.bp_model_gallery {
+            width: 100%!important;
+            height: 100%!important;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: 99999;
+            background: #fff
+        }
+        .fullscreen model-viewer {
+            animation-name: opacityTo;
+            animation-duration: 2s
+        }
+        .model-icon {
+            fill: #333;
+            cursor: pointer
+        }
+        .bp_model_parent #closeBtn,.bp_model_gallery #closeBtn {
+            display: none
+        }
+        .fullscreen #closeBtn {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 10px
+        }
+        .bp_model_parent #openBtn,.bp_model_gallery #openBtn {
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            right: 10px
+        }
+        .bp_model_parent:hover #openBtn,.bp_model_gallery:hover #openBtn {
+            display: block
+        }
+        .fullscreen.bp_model_parent #openBtn,.fullscreen.bp_model_gallery #openBtn {
+            display: none
+        }
+        @keyframes opacityTo {
+            0% {
+                opacity: 0
+            }
+
+            100% {
+                opacity: 1
+            }
+        }
+        #lazy-load-poster{
+            background-image: url("/glb/mixing-tank.jpg");
+            background-size: 100% auto!important;
+        }
+        #lazy-load-poster {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #button-load {
+            background-repeat: no-repeat;
+            background-size: 24px 24px;
+            background-position: 6% 50%;
+            background-color: #ff1100;
+            color: white;
+            cursor: pointer;
+            border-radius: 6px;
+            display: inline-block;
+            padding: 20px 24px;
+            font-weight: 500;
+            box-shadow: 0 0 8px rgba(0,0,0,.2), 0 0 4px rgba(0,0,0,.25);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            z-index: 100;
+            width: 200px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .footer {
+            position: fixed;
+
+        }
+        .footer ul li {
+            color: #222;
+            display: inline-block;
+        }
+        .footer ul li.active img {
+            border: 5px solid #751cc6;
+        }
+        a.btn {
+            background: #751cc6;
+            color: #fff;
+            display: inline-block;
+            text-align: center;
+            font-weight: bold;
+            padding: 12px 18px;
+            border-radius: 4px;
+        }
+        @media (min-width:961px){
+            .footer{
+                /*left:0;*/
+                bottom: 30px;
+                width: 100%;
+            }
+            .footer ul {
+                list-style: none;
+                margin: 0 0 0 0px;
+                padding:0;
+                text-align:center;
+            }
+            .footer ul li {
+                display:inline-block;
+            }
+        }
+        @media (max-width:960px){
+            .footer{
+                bottom: 30px;
+                width: 100%;
+            }
+            .footer ul {
+                list-style: none;
+                text-align: center;
+                width: 100%;
+                display: block;
+                margin: 0;
+                padding:0;
+            }
+            .footer ul li {
+                display: inline-block;
+            }
+        }
+        a{font-style:normal;text-decoration:none}
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<section id="ar-section" class="ar-section item-wrapper">
+    <div class="header">
+        <a class="center" href="https://ar-korea.com" target="_blank">
+            <img src="https://ar-korea.com/wp-content/uploads/2021/11/ARK-Logo-white-stroke-1024x702.png" class="header_logo header-logo" alt="(주)에이알케이">
+        </a>
+    </div>
+    <div class="ar-wrapper">
+        <div class="bp_model_parent">
+            <model-viewer id="lazy-load" bounds="tight" enable-pan reveal="interaction" src="/glb/mixing-tank.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" shadow-intensity="1" alt="POLYMER MIXING TANK FREETA-α">
+            <div id="lazy-load-poster" slot="poster"></div>
+            <div id="button-load" slot="poster">3D VIEW</div>
+            <div id="ar-prompt">
+                <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+            </div>
+            </model-viewer>
+            <script type="text/javascript">
+              document.querySelector('#button-load').addEventListener('click',() => document.querySelector('#lazy-load').dismissPoster());
+            </script>
+            <style>
+            </style>
+            <!-- Button -->
+            <svg id="openBtn" width="24px" height="24px" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#f2f2f2" class="bi bi-arrows-fullscreen model-icon">
+            <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"></path>
+            </svg>
+            <svg id="closeBtn" class="model-icon" width="90px" height="90px" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" stroke="#3a1e7f" stroke-width="4" d="M7,7 L17,17 M7,17 L17,7"></path>
+            </svg>
+            <!-- ./Button -->
+        </div>
+    </div>
+    <div class="footer">
+        <div class="thumbs">
+            <h3 class="center">POLYMER MIXING TANK FREETA-α</h3>
+            <ul>
+                <li>
+                    <a href="3d-decanter.html">
+                        <img src="https://blog.kakaocdn.net/dn/zkdPm/btszeLtJQmw/vJTRfLoM3Jixqkyk07IAR0/img.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="3d-screw.html">
+                        <img src="https://blog.kakaocdn.net/dn/nx3Hh/btsy9OS9dZq/bZUnkQxL09th3cDurZL5H1/img.jpg">
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="3d-resolver.html">
+                        <img src="https://blog.kakaocdn.net/dn/MxBaw/btszeLgcISk/3CF50jUkMav6CMkRoKKNX0/img.jpg">
+                    </a>
+                </li>
+            </ul>
+            <div class="center" style="margin-top:20px">
+                <a target="_blank" class="btn" href="https://arkvietnam.com/en/product/polymer-mixing-tank-freeta-%ce%b1">MORE DETAILS</a>
+            </div>
+        </div>
+    </div>
+</section>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.min.js"></script>
+    <script>
+        // Full Screen
+        addEventListener("DOMContentLoaded", function () {
+          const modelWrapper = document.querySelectorAll(".bp_model_parent");
+          Object.values(modelWrapper).map((wrapper) => {
+            const fullscreen = wrapper.querySelector("#openBtn");
+            const closeBtn = wrapper.querySelector("#closeBtn");
+            fullscreen.onclick = () => {
+              wrapper.classList.add("fullscreen");
+            };
+            closeBtn.onclick = () => {
+              wrapper.classList.remove("fullscreen");
+            };
+          });
+
+          let carouselData = document.querySelectorAll(".bp3dmodel-carousel");
+          Object.values(carouselData).map((itemData) => {
+            if (itemData.dataset.fullscreen == 1) {
+              createFullScreenFeature();
+            }
+          });
+        });
+
+        jQuery(document).ready(function ($) {
+        });
+        function createFullScreenFeature() {
+          const bigModel = document.querySelectorAll(".bp_model_gallery");
+
+          const hideElement = document.createElement("div");
+          Object.values(bigModel).map((bigModel) => {
+            const item = bigModel.querySelector("model-viewer");
+
+            const buttonWrapper = document.createElement("div");
+            buttonWrapper.classList.add("bp3d-model-buttons");
+            buttonWrapper.innerHTML =
+              '<svg id="openBtn" width="24px" height="24px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#f2f2f2" class="bi bi-arrows-fullscreen"> <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/> </svg> <svg id="closeBtn" width="34px" height="34px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#f2f2f2" stroke-width="2" d="M7,7 L17,17 M7,17 L17,7"/> </svg>';
+
+            item.parentNode.appendChild(buttonWrapper);
+
+            const newItem = item.parentNode.cloneNode(true);
+            newItem.style.display = "none";
+            newItem.onclick = function (e) {
+              e.preventDefault();
+            };
+            const model = newItem.querySelector("model-viewer");
+            model.style.width = "100%";
+            model.style.height = "100%";
+            model.style.maxHeight = "100%";
+
+            hideElement.appendChild(newItem);
+
+            const fullscreen = buttonWrapper.querySelector("#openBtn");
+            const closefullscreen = newItem.querySelector("#closeBtn");
+            fullscreen.onclick = () => {
+              newItem.classList.add("fullscreen");
+              newItem.style.display = "block";
+            };
+            closefullscreen.onclick = (e) => {
+              e.preventDefault();
+              newItem.classList.remove("fullscreen");
+              newItem.style.display = "none";
+            };
+          });
+
+          const body = document.querySelector("body");
+          body.appendChild(hideElement);
+        }
+    </script>
+</body>
+</html>
